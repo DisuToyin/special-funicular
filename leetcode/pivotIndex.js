@@ -11,6 +11,23 @@
 // Explanation:
 // There is no index that satisfies the conditions in the problem statement.
 
-const pivotIndex = (nums) => {};
+const pivotIndex = (nums) => {
+  if (nums.length === 0) return -1;
+  if (nums.length === 1) return 0;
+  let leftTotal = 0;
+  let total = 0;
 
-console.log(pivotIndex([1, 2, 3, 4]));
+  for (let i = 0; i < nums.length; i++) {
+    total += nums[i];
+  }
+  for (let i = 0; i < nums.length; i++) {
+    let rightTotal = total - nums[i] - leftTotal;
+    console.log({ rightTotal, leftTotal });
+    if (rightTotal === leftTotal) return i;
+    leftTotal += nums[i];
+  }
+
+  return -1;
+};
+
+console.log(pivotIndex([1, 7, 3, 6, 5, 6]));

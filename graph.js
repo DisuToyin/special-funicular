@@ -80,6 +80,15 @@ const hasPathBF = (graph, src, dst) => {
 
 // undirected path
 // convert the edge list to adjacency list
+
+const edges = [
+  [i, j],
+  [k, i],
+  [m, k],
+  [k, l],
+  [o, n],
+];
+
 const undirectedPath = (edges, nodeA, nodeB) => {
   const graph = buildGraph(edges);
   return hasPathUG(graph, nodeA, nodeB, new Set());
@@ -116,11 +125,3 @@ const buildGraph = (edges) => {
 
   return graph;
 };
-
-const edges = [
-  [i, j],
-  [k, i],
-  [m, k],
-  [k, l],
-  [o, n],
-];
