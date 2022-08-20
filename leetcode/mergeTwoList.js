@@ -4,13 +4,6 @@
 
 // Return the head of the merged linked list.
 
-const printLinkedList = (head) => {
-  let current = head;
-  while (current !== null) {
-    console.log(current.val);
-    current = current.next;
-  }
-};
 class Node {
   constructor(val) {
     this.val = val;
@@ -31,6 +24,14 @@ const y = new Node(3);
 
 w.next = x;
 x.next = y;
+
+const printLinkedList = (head) => {
+  let current = head;
+  while (current !== null) {
+    console.log(current.val);
+    current = current.next;
+  }
+};
 
 const mergeSortedLinkedList = (l1, l2) => {
   let current = new Node();
