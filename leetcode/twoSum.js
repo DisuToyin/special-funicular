@@ -32,9 +32,10 @@ const twoSumHashMap = (nums, target) => {
   }
   for (let i = 0; i < nums.length; i++) {
     let resultVal = target - nums[i];
-    if (hashMap[resultVal] !== undefined) {
+    if (hashMap[resultVal] !== i && hashMap[resultVal] !== undefined) {
       return [i, hashMap[resultVal]];
     }
   }
 };
-console.log(twoSumHashMap([2, 7, 11, 15], 26));
+console.log(twoSumHashMap([3, 3], 6));
+// Runtime: 75 ms, faster than 92.19% of JavaScript online submissions for Two Sum.
