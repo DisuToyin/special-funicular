@@ -32,7 +32,7 @@ const twoSumHashMap = (nums, target) => {
   }
   for (let i = 0; i < nums.length; i++) {
     let resultVal = target - nums[i];
-    if (hashMap[resultVal] !== i && hashMap[resultVal] !== undefined) {
+    if (hashMap[resultVal] !== undefined && hashMap[resultVal] !== i) {
       return [i, hashMap[resultVal]];
     }
   }
