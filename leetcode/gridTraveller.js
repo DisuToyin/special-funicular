@@ -4,11 +4,22 @@
 
 // The test cases are generated so that the answer will be less than or equal to 2 * 109.
 
-const gridTraveller = (m, n, memo = {}) => {
+const gridTraveller = (m, n) => {
   if (m === 1 && n === 1) return 1;
   if (m === 0 || n === 0) return 0;
 
   return gridTraveller(m - 1, n) + gridTraveller(m, n - 1);
 };
 
-console.log(gridTraveller(3, 3));
+// same problem but using memoization
+const uniquePaths = (m, n, memo = {}) => {
+  let key = m + "," + n;
+  if (key in memo) return memo[key];
+  if (m === 1 && n === 1) return 1;
+  if (m === 0 || n === 0) return 0;
+
+  memo[key] = uniquePaths(m - 1, n, memo) + uniquePaths(m, n - 1, memo);
+  return memo[key];
+};
+
+console.log(uniquePaths(3, 3));

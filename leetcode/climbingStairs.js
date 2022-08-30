@@ -31,4 +31,16 @@ const climbStairs = (n) => {
   return second;
 };
 
-console.log(climbStairs(5));
+// recursion and memoization
+const climbingStairs = (n, memo = {}) => {
+  if (n in memo) return memo[n];
+  if (n === 1 || n === 0) return 1;
+  // if (n === 2) return 2;
+  if (n < 0) return 0;
+  memo[n] = climbingStairs(n - 2, memo) + climbingStairs(n - 1, memo);
+  return memo[n];
+};
+
+// Runtime: 62 ms, faster than 92.63% of JavaScript online submissions for Climbing Stairs.
+
+console.log(climbingStairs(2));
