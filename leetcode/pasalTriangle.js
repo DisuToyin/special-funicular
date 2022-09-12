@@ -13,9 +13,14 @@
 
 const pascalTriangle = (numRows) => {
   let result = [[1]];
-  for (let i = 1; i <= numRows; i++) {
-    result[i] = 
+
+  for (let i = 0; i <= result.length; i++) {
+    console.log(result[i]);
+    for (let j = 0; j <= result[i].length; j++) {
+      console.log(result[i][j]);
+    }
   }
+  return result;
 };
 
 console.log(pascalTriangle(5));
