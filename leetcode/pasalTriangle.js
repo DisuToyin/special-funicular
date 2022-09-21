@@ -11,6 +11,8 @@
 // Input: numRows = 1
 // Output: [[1]]
 
+//dynamic programming tabulation
+
 const pascalTriangle = (numRows) => {
   let result = [[1]];
 
